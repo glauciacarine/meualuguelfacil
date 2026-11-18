@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel | Meu Aluguel Fácil</title>
+</head>
+
+<body>
+
+    <h1>Meu Aluguel Fácil</h1>
+
+    <p>
+        Olá, {{ usuario }}!
+    </p>
+
+    <h2>Seus apartamentos</h2>
+
+    {% if apartamentos %}
+
+        <ul>
+            {% for apartamento in apartamentos %}
+                <li>
+                    Apartamento {{ apartamento.numero }}
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+
+        <p>
+            Nenhum apartamento está vinculado a esta conta.
+        </p>
+
+    {% endif %}
+
+    <hr>
+
+    <a href="/logout">
+        Sair
+    </a>
+
+</body>
+
+</html>
